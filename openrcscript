@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+# https://github.com/OpenRC/openrc/blob/master/service-script-guide.md#dont-write-your-own-startstop-functions
+command=COMMAND_PATH
+# start in foreground
+command_args="-f"
+# let OpenRC background daemon with pidfile
+command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"
