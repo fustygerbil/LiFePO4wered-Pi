@@ -62,7 +62,7 @@ enable-init-1: # systemd
 	systemctl enable lifepo4wered-daemon.service
 	systemctl restart lifepo4wered-daemon.service
 enable-init-2: # sysvinit
-	rc-update lifepo4wered-daemon default
+	rc-update add lifepo4wered-daemon default
 	rc-service lifepo4wered-daemon restart
 user-install: install enable-bus enable-init-$(USE_SYSTEMD)
 
