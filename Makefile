@@ -37,7 +37,7 @@ install-init-1: install-init-0 # systemd and sysvinit
 	install -D -p systemdscript $(DESTDIR)$(PREFIX)/lib/systemd/system/lifepo4wered-daemon.service
 	sed -i "s:DAEMON_DIRECTORY:$(PREFIX)/sbin:" $(DESTDIR)$(PREFIX)/lib/systemd/system/lifepo4wered-daemon.service
 install-init-2: # OpenRC
-	install -D -p initscript $(DESTDIR)/etc/init.d/lifepo4wered-daemon
+	install -D -p openrcscript $(DESTDIR)/etc/init.d/lifepo4wered-daemon
 	sed -i "s:COMMAND_PATH:$(PREFIX)/sbin/lifepo4wered-daemon:" $(DESTDIR)/etc/init.d/lifepo4wered-daemon
 build/modules-load.conf:
 	echo "i2c-dev" > build/modules-load.conf
